@@ -1,0 +1,82 @@
+PROCEDURE  dot_product (v1 , v2 :ARRAY_of integer[20] ,VAR  ps:integer)
+
+VAR 
+    i : INTEGER;
+
+BEGIN
+IF(v1.length = v2.length) THEN
+FOR i FROM 0 TO v1.length DO
+    ps := ps + v1[i] * v2[i]
+  
+   END_IF
+   END_FOR
+
+      END
+
+Algorithm dot_product
+VAR
+    V1,V2 : ARRAY_OF integer[];
+    n1,n2,ps,i: INTEGER := 0 ;
+
+ BEGIN 
+
+write("donner la taille des deux vecteurs v1&v2" )
+Read (N)
+FOR i:=1 to N do
+Read(v1[i])
+
+FOR i:=1 to N do
+Read(v2[i])
+ 
+dot_product(V1,V2,ps);
+
+    IF (ps = 0) THEN
+        Write("V1 and V2 are orthogonal");
+    ELSE
+        Write("V1 and V2 are not orthogonal");
+    END_IF
+END
+
+//......PARAMETRE DU PASSAGE FUNCTION
+
+FUNCTION dot_product (v1 , v2 :ARRAY_of integer[20]) : integer
+    VAR
+ i , ps: INTEGER;
+
+BEGIN
+IF(v1.length = v2.length) THEN
+FOR i FROM 0 TO v1.length DO
+    ps := ps + v1[i] * v2[i]
+  
+   END_IF
+   RETURN ps;
+   END
+Algorithm dot_product
+VAR
+    V1,V2 : ARRAY_OF integer[];
+    n1,n2,ps,i: INTEGER := 0 ;
+
+ BEGIN 
+
+write("donner la taille des deux vecteurs v1&v2" )
+Read (N)
+FOR i:=1 to N do
+Read(v1[i])
+
+FOR i:=1 to N do
+Read(v2[i])
+
+ ps := dot_product(V1,V2);
+
+IF (ps = 0) THEN
+        Write("V1 and V2 are orthogonal");
+    ELSE
+        Write("V1 and V2 are not orthogonal");
+    END_IF
+END
+
+
+
+
+
+
